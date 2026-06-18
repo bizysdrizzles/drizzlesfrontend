@@ -11,7 +11,7 @@ export default function Feedback() {
   const loading = useSelector(selectFeedbackLoading);
   const success = useSelector(selectFeedbackSuccess);
   const user = useSelector(selectUser);
-  const isAuth = useSelector(selectIsAuthenticated);
+  // const isAuth = useSelector(selectIsAuthenticated);
   const [form, setForm] = useState({ name: user?.fullName || '', email: user?.email || '', message: '', rating: 5 });
   const [hovered, setHovered] = useState(0);
 

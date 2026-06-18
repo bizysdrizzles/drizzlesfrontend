@@ -10,7 +10,7 @@ export default function Footer() {
   const user = useSelector(selectUser);
   const loyaltyThreshold = 7;
   const saucesCount = user?.saucesOrderedCount || 0;
-  const progress = saucesCount % loyaltyThreshold;
+  // const progress = saucesCount % loyaltyThreshold;
   const remainder = loyaltyThreshold - saucesCount;
   return (
     <footer className="footer">

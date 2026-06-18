@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchSalesAnalytics, fetchDateRangeAnalytics, fetchPopularProducts,
   fetchUserStats, fetchOrderStatus,
-  selectSalesData, selectPopularProducts, selectUserStats, selectOrderStatusData, selectAnalyticsLoading,
+  selectSalesData, selectPopularProducts, selectUserStats, selectOrderStatusData,
 } from '../../features/analytics/analyticsSlice';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Legend } from 'recharts';
 import './AdminCommon.css';
@@ -17,7 +17,7 @@ export default function AdminAnalytics() {
   const popular = useSelector(selectPopularProducts);
   const userStats = useSelector(selectUserStats);
   const orderStatus = useSelector(selectOrderStatusData);
-  const loading = useSelector(selectAnalyticsLoading);
+  // const loading = useSelector(selectAnalyticsLoading);
   const [dateRange, setDateRange] = useState({ start: '', end: '' });
 
   useEffect(() => {

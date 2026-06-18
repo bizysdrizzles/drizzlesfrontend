@@ -39,7 +39,8 @@ const HERO_IMAGES = isMobileView ? HERO_IMAGES_MOBILE : HERO_IMAGES_DESKTOP;
     dispatch(fetchAllFeedback());
     const interval = setInterval(() => setHeroIndex(i => (i + 1) % HERO_IMAGES.length), 5000);
     return () => clearInterval(interval);
-  }, [dispatch]);
+  }, [dispatch, HERO_IMAGES.length]);
+
 
   const featuredProducts = products.filter(p => p.isActive !== false).slice(0, 4);
   const reviews = feedback.slice(0, 3);
