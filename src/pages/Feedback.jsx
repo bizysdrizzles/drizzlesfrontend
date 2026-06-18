@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createFeedback, fetchAllFeedback, selectAllFeedback, selectFeedbackLoading, selectFeedbackSuccess, clearSuccess } from '../features/feedback/feedbackSlice';
-import { selectUser, selectIsAuthenticated } from '../features/auth/authSlice';
+import { selectUser} from '../features/auth/authSlice';
 import { showToast } from '../features/ui/uiSlice';
 import './Feedback.css';
 

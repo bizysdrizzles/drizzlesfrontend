@@ -128,7 +128,7 @@ export default function Register() {
             </div>
             <label className="checkbox-label">
               <input type="checkbox" checked={agree} onChange={() => setAgree(!agree)} required />
-              I agree to the <a style={{ color: 'var(--accent-color)' }}>Terms of Service</a> and <a style={{ color: 'var(--accent-color)' }}>Privacy Policy</a>
+              I agree to the <p style={{ color: 'var(--accent-color)' }}>Terms of Service</p> and <p style={{ color: 'var(--accent-color)' }}>Privacy Policy</p>
             </label>
            <button type="submit" className="btn btn-accent btn-lg auth-submit" disabled={loading || !isFormValid}>
               {loading ? <span className="spinner" style={{ width: 20, height: 20, borderWidth: 2 }} /> : 'Create Account'}

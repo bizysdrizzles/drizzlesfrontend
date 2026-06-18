@@ -29,9 +29,9 @@ export default function Footer() {
             <p className="footer-tagline">BEWARE: Sauce might become slightly addictive.</p>
              <p className="footer-tagline"> Enjoy every pour!</p>
             <div className="social-links">
-              <a href="#" aria-label="Facebook" className="social-link"> <FontAwesomeIcon icon={faFacebook} color="#1877F2" /> </a>
-              <a href="#" aria-label="Instagram" className="social-link"> <FontAwesomeIcon icon={faInstagram} color="#E4405F" /></a>
-              <a href="#" aria-label="Tiktok" className="social-link"><FontAwesomeIcon icon={faTiktok} color="#000000" /></a>
+              <a href="https://www.tiktok.com/@bizysdrizzles" aria-label="Facebook" className="social-link"> <FontAwesomeIcon icon={faFacebook} color="#1877F2" /> </a>
+              <a href="https://www.tiktok.com/@bizysdrizzles" aria-label="Instagram" className="social-link"> <FontAwesomeIcon icon={faInstagram} color="#E4405F" /></a>
+              <a href="https://www.tiktok.com/@bizysdrizzles" aria-label="Tiktok" className="social-link"><FontAwesomeIcon icon={faTiktok} color="#000000" /></a>
             </div>
           </div>
 
