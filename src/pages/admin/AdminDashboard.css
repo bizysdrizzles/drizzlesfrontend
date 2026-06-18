@@ -1,0 +1,16 @@
+.admin-dashboard { max-width: 1200px; }
+.stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-xl); }
+.stat-card { padding: var(--spacing-lg); text-align: center; }
+.stat-icon { font-size: 1.8rem; margin-bottom: 8px; }
+.stat-value { font-size: 1.8rem; font-weight: 700; font-family: var(--font-display); color: var(--text-color); }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+.charts-row { display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
+.chart-card { padding: var(--spacing-lg); }
+.chart-card h3 { margin-bottom: var(--spacing-lg); font-size: 1rem; }
+.chart-card.small { }
+.no-data { display: flex; align-items: center; justify-content: center; height: 200px; color: var(--text-muted); font-size: 0.9rem; }
+.bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); }
+.recent-orders { padding: var(--spacing-lg); }
+.recent-orders h3 { font-size: 1rem; }
+@media (max-width: 1024px) { .stat-cards { grid-template-columns: repeat(2, 1fr); } .charts-row, .bottom-row { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .stat-cards { grid-template-columns: 1fr; } }
