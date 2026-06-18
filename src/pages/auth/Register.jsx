@@ -15,23 +15,26 @@ export default function Register() {
   const [form, setForm] = useState({ fullName: '', email: '', phoneNumber: '', password: '', confirmPassword: '' });
   const [showPass, setShowPass] = useState(false);
   const [agree, setAgree] = useState(false);
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+  const phoneValid = /^[0-9]{10,15}$/.test(form.phoneNumber);
+  const passwordValid = form.password.length >= 6;
+  const passwordsMatch = form.password && form.password === form.confirmPassword;
+  const nameValid = form.fullName.trim().length >= 2;
+  const isFormValid = nameValid && emailValid && phoneValid && passwordValid && passwordsMatch && agree;
 
   useEffect(() => { if (isAuth) navigate('/'); }, [isAuth, navigate]);
   useEffect(() => { return () => dispatch(clearError()); }, [dispatch]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (form.password !== form.confirmPassword) {
-      dispatch(showToast('Passwords do not match', 'error'));
-      return;
-    }
-    const { confirmPassword, ...data } = form;
-    const result = await dispatch(register(data));
-    if (result.meta.requestStatus === 'fulfilled') {
-      dispatch(showToast('Account created! Welcome to Bizy\'s Drizzles!', 'success'));
-      navigate('/');
-    }
-  };
+  e.preventDefault();
+  if (!isFormValid) return;
+  const { confirmPassword, ...data } = form;
+  const result = await dispatch(register(data));
+  if (result.meta.requestStatus === 'fulfilled') {
+    dispatch(showToast('Account created! Welcome to Bizy\'s Drizzles!', 'success'));
+    navigate('/');
+  }
+};
 
   const update = (field) => (e) => setForm({ ...form, [field]: e.target.value });
 
@@ -70,10 +73,24 @@ export default function Register() {
             <div className="form-group">
               <label>Email Address</label>
               <input type="email" className="form-control" placeholder="you@example.com" value={form.email} onChange={update('email')} required />
+              {form.email && !emailValid && (
+                <span className="field-error">Please enter a valid email address (e.g. you@example.com)</span>
+              )}
             </div>
             <div className="form-group">
               <label>Phone Number</label>
-              <input type="tel" className="form-control" placeholder="10-15 digits" value={form.phoneNumber} onChange={update('phoneNumber')} required />
+              <input
+                type="tel"
+                className="form-control"
+                placeholder="10-15 digits"
+                value={form.phoneNumber}
+                onChange={(e) => setForm({ ...form, phoneNumber: e.target.value.replace(/[^0-9]/g, '') })}
+                inputMode="numeric"
+                required
+              />
+              {form.phoneNumber && !phoneValid && (
+                <span className="field-error">Phone must be 10–15 digits, numbers only</span>
+              )}
             </div>
             <div className="form-group">
               <label>Password</label>
@@ -91,6 +108,9 @@ export default function Register() {
                   {showPass ? '🙈' : '👁️'}
                 </button>
               </div>
+              {form.password && !passwordValid && (
+                <span className="field-error">Password must be at least 6 characters</span>
+              )}
             </div>
             <div className="form-group">
               <label>Confirm Password</label>
@@ -102,12 +122,15 @@ export default function Register() {
                 onChange={update('confirmPassword')}
                 required
               />
+              {form.confirmPassword && !passwordsMatch && (
+                <span className="field-error">Passwords do not match</span>
+              )}
             </div>
             <label className="checkbox-label">
               <input type="checkbox" checked={agree} onChange={() => setAgree(!agree)} required />
               I agree to the <a href="#" style={{ color: 'var(--accent-color)' }}>Terms of Service</a> and <a href="#" style={{ color: 'var(--accent-color)' }}>Privacy Policy</a>
             </label>
-            <button type="submit" className="btn btn-accent btn-lg auth-submit" disabled={loading || !agree}>
+           <button type="submit" className="btn btn-accent btn-lg auth-submit" disabled={loading || !isFormValid}>
               {loading ? <span className="spinner" style={{ width: 20, height: 20, borderWidth: 2 }} /> : 'Create Account'}
             </button>
           </form>
