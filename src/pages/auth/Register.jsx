@@ -58,7 +58,7 @@ export default function Register() {
         />
       </div>
 
-      <div className="auth-right">
+      <div className="auth-right auth-pages">
         <div className="auth-form-wrap">
           <h1>Create Account</h1>
           <p className="auth-subtitle">It's free and always will be</p>

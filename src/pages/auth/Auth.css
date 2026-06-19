@@ -185,11 +185,16 @@
   }
 
   .auth-page {
-    padding-top: 105px;
     flex-direction: column;
     min-height: 73vh;
     grid-template-columns: 1fr;
   }
+
+  .auth-pagel{
+    padding-top: var(--nav-height);}
+
+  .auth-pages{
+    padding-top: 115px;}
 
   .auth-form-wrap h1 {
     text-align: center;
