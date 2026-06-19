@@ -98,8 +98,9 @@ export default function Products() {
                   <h3><Link to={`/products/${product._id}`}>{product.name}</Link></h3>
                   <p>{product.description?.substring(0, 100)}...</p>
                   <div className="product-meta">
-                    <span className="product-price">${product.price?.toFixed(2)}</span>
+                    
                     <div className="product-actions">
+                      <span className="product-price">${product.price?.toFixed(2)}</span>
                       <Link to={`/products/${product._id}`} className="btn btn-ghost btn-sm">Details</Link>
                       <button
                         className="btn btn-accent btn-sm"

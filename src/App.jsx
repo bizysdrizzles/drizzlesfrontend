@@ -9,7 +9,7 @@ import { fetchCart } from './features/cart/cartSlice';
 import { selectIsAuthenticated } from './features/auth/authSlice';
 import './styles/globals.css';
 import { ForgotPassword, ResetPassword } from './pages/auth/ForgotPassword';
-
+import ScrollToTop from './components/scrolltotop';
 // Layout
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -66,6 +66,7 @@ function AppInner() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           {/* Admin Routes - no navbar/footer */}
