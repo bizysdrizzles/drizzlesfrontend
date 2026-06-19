@@ -185,7 +185,7 @@
   }
 
   .auth-page {
-    padding-top: var(--nav-height);
+    padding-top: 105px;
     flex-direction: column;
     min-height: 73vh;
     grid-template-columns: 1fr;
