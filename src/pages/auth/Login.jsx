@@ -30,7 +30,7 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page auth-pagel">
       <div className="auth-left">
         <div className="auth-brand">
           <span className="brand-script">Bizy's</span>
@@ -50,7 +50,7 @@ export default function Login() {
         />
       </div>
 
-      <div className="auth-right">
+      <div className="auth-right ">
         <div className="auth-form-wrap">
           <h1>Sign In</h1>
           <p className="auth-subtitle">Enter your phone or email and password</p>

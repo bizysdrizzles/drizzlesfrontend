@@ -39,7 +39,7 @@ export default function Register() {
   const update = (field) => (e) => setForm({ ...form, [field]: e.target.value });
 
   return (
-    <div className="auth-page">
+    <div className="auth-page auth-pages">
       <div className="auth-left">
         <div className="auth-brand">
           <span className="brand-script">Bizy's</span>
@@ -58,7 +58,7 @@ export default function Register() {
         />
       </div>
 
-      <div className="auth-right auth-pages">
+      <div className="auth-right">
         <div className="auth-form-wrap">
           <h1>Create Account</h1>
           <p className="auth-subtitle">It's free and always will be</p>

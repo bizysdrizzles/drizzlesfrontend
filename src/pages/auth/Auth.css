@@ -190,11 +190,13 @@
     grid-template-columns: 1fr;
   }
 
-  .auth-pagel{
-    padding-top: var(--nav-height);}
+  .auth-pagel {
+    padding-top: var(--nav-height);
+  }
 
-  .auth-pages{
-    padding-top: 115px;}
+  .auth-pages {
+    padding-top: 115px;
+  }
 
   .auth-form-wrap h1 {
     text-align: center;
