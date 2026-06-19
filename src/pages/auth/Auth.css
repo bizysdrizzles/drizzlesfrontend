@@ -185,6 +185,8 @@
   }
 
   .auth-page {
+    padding-top: var(--nav-height);
+    flex-direction: column;
     min-height: 73vh;
     grid-template-columns: 1fr;
   }
@@ -200,11 +202,5 @@
   .auth-right {
     padding: var(--spacing-md) var(--spacing-md);
     max-height: 78vh;
-  }
-}
-@media (max-width: 768px) {
-  .auth-page {
-    padding-top: var(--nav-height);
-    flex-direction: column;
   }
 }
