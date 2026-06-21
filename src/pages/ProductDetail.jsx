@@ -101,9 +101,9 @@ export default function ProductDetail() {
             )}
 
             <div className="detail-features">
-              <div className="df-row"><span>🚀</span><p><strong>Fast Shipping</strong> — Orders ship within 1-2 business days</p></div>
-              <div className="df-row"><span>🔄</span><p><strong>Easy Returns</strong> — 30-day return policy</p></div>
-              <div className="df-row"><span>🎁</span><p><strong>Loyalty Points</strong> — Earn rewards with every purchase</p></div>
+              <div className="df-row"><span>🚀</span><p><strong>Fast Shipping</strong></p></div>
+              <div className="df-row"><span>🔄</span><p><strong>Flexible Returns</strong></p></div>
+              <div className="df-row"><span>🎁</span><p><strong>Loyalty Points</strong></p></div>
             </div>
           </div>
         </div>

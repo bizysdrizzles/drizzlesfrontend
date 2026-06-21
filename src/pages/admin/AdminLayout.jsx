@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import './AdminLayout.css';
 
@@ -14,6 +14,7 @@ const navItems = [
 
 export default function AdminLayout() {
   const location = useLocation();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const isActive = (item) => {
     if (item.exact) return location.pathname === item.path;
@@ -22,10 +23,24 @@ export default function AdminLayout() {
 
   return (
     <div className="admin-wrapper">
-      <aside className="admin-sidebar">
+      {/* Mobile top bar */}
+      <div className="admin-mobile-bar">
+        <button className="sidebar-toggle" onClick={() => setSidebarOpen(true)}>
+          ☰
+        </button>
+        <span className="mobile-bar-title">Bizy's Admin</span>
+      </div>
+
+      {/* Overlay when sidebar open on mobile */}
+      {sidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+
+      <aside className={`admin-sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-brand">
           <span className="brand-script">Bizy's</span>
           <span>Admin</span>
+          <button className="sidebar-close" onClick={() => setSidebarOpen(false)}>✕</button>
         </div>
         <nav className="sidebar-nav">
           {navItems.map(item => (
@@ -33,6 +48,7 @@ export default function AdminLayout() {
               key={item.path}
               to={item.path}
               className={`sidebar-link ${isActive(item) ? 'active' : ''}`}
+              onClick={() => setSidebarOpen(false)}
             >
               <span className="sidebar-icon">{item.icon}</span>
               <span>{item.label}</span>
