@@ -50,8 +50,6 @@
     font-size: 1rem;
 }
 
-.chart-card.small {}
-
 .no-data {
     display: flex;
     align-items: center;
