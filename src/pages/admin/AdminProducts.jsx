@@ -98,7 +98,7 @@ export default function AdminProducts() {
                       <strong>{p.name}</strong>
                       <div className="text-muted text-sm">{p.description?.substring(0, 50)}...</div>
                     </td>
-                    <td>${p.price?.toFixed(2)}</td>
+                    <td>{p.price}&nbsp;EGP</td>
                     <td>
                       <span className={p.stock === 0 ? 'text-error' : p.stock <= 5 ? 'text-warning' : ''}>
                         {p.stock}

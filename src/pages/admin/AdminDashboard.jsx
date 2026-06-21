@@ -51,7 +51,7 @@ export default function AdminDashboard() {
       {/* Stat Cards */}
       <div className="stat-cards">
         {[
-          { label: 'Total Revenue', value: `$${Number(totalRevenue).toFixed(2)}`, icon: '💰', color: 'var(--success-color)' },
+          { label: 'Total Revenue', value: `${Number(totalRevenue)} EGP`, icon: '💰', color: 'var(--success-color)' },
           { label: 'Total Orders', value: totalOrders, icon: '📦', color: 'var(--info-color)' },
           { label: 'Pending Orders', value: pendingOrders, icon: '⏳', color: 'var(--warning-color)' },
           { label: 'Completed Orders', value: completedOrders, icon: '✅', color: 'var(--success-color)' },
@@ -140,7 +140,7 @@ export default function AdminDashboard() {
                   <tr key={order._id}>
                     <td><Link to={`/orders/${order._id}`} style={{ color: 'var(--accent-color)' }}>#{order._id?.slice(-6).toUpperCase()}</Link></td>
                     <td>{new Date(order.createdAt).toLocaleDateString()}</td>
-                    <td>${order.total?.toFixed(2)}</td>
+                    <td>{order.total}&nbsp;EGP</td>
                     <td><span className={`badge badge-${order.status === 'Completed' ? 'success' : order.status === 'Cancelled' ? 'error' : order.status === 'Pending' ? 'warning' : 'info'}`}>{order.status}</span></td>
                   </tr>
                 ))}

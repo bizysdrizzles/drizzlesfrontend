@@ -378,7 +378,7 @@ export default function Checkout() {
                     </div>
                     <span className="ri-name">{getName(item)}</span>
                     <span className="ri-qty">×{item.quantity}</span>
-                    <span className="ri-price">${(getPrice(item) * item.quantity).toFixed(2)}</span>
+                    <span className="ri-price">{(getPrice(item) * item.quantity)}&nbsp;EGP</span>
                   </div>
                 ))}
               </div>
@@ -390,7 +390,7 @@ export default function Checkout() {
               >
                 {loading ? (
                   <><span className="spinner" style={{ width: 20, height: 20, borderWidth: 2 }} /> Placing order...</>
-                ) : `Place Order — $${total.toFixed(2)}`}
+                ) : `Place Order — ${total} EGP`}
               </button>
             </div>
           )}
@@ -425,7 +425,7 @@ export default function Checkout() {
 
             {loyaltyDiscountAmount > 0 ? (
               <div className="loyalty-applied">
-                🎁 8th sauce reward applied — saving ${loyaltyDiscountAmount.toFixed(2)}!
+                🎁 8th sauce reward applied — saving {loyaltyDiscountAmount}&nbsp;EGP!
               </div>
             ) : !isAuth ? (
               <div className="loyalty-info">
@@ -440,17 +440,17 @@ export default function Checkout() {
             <div className="summary-lines">
               <div className="summary-line">
                 <span>Subtotal</span>
-                <span>${safeSubtotal.toFixed(2)}</span>
+                <span>{safeSubtotal}&nbsp;EGP</span>
               </div>
               {discountAmount > 0 && (
                 <div className="summary-line discount-line">
                   <span>Discount{validatedPromo ? ` (${validatedPromo.code})` : ''}{loyaltyDiscountAmount > 0 ? ' + 8th Sauce' : ''}</span>
-                  <span>−${discountAmount.toFixed(2)}</span>
+                  <span>−{discountAmount} &nbsp;EGP</span>
                 </div>
               )}
               <div className="summary-line">
                 <span>Shipping</span>
-                <span>{shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}</span>
+                <span>{shipping === 0 ? 'FREE' : `${shipping} EGP`}</span>
               </div>
             </div>
 
@@ -458,11 +458,10 @@ export default function Checkout() {
 
             <div className="summary-total-big">
               <span>Total</span>
-              <strong>${total.toFixed(2)}</strong>
+              <strong>{total} &nbsp;EGP</strong>
             </div>
 
             <div className="checkout-security">
-              <span>🔒 Secure checkout</span>
               <span>💳 COD accepted</span>
             </div>
           </div>

@@ -100,7 +100,7 @@ export default function Products() {
                   <div className="product-meta">
                     
                     <div className="product-actions">
-                      <span className="product-price">${product.price?.toFixed(2)}</span>
+                      <span className="product-price">{product.price}&nbsp;EGP</span>
                       <Link to={`/products/${product._id}`} className="btn btn-ghost btn-sm">Details</Link>
                       <button
                         className="btn btn-accent btn-sm"

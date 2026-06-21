@@ -184,7 +184,7 @@ const HERO_IMAGES = isMobileView ? HERO_IMAGES_MOBILE : HERO_IMAGES_DESKTOP;
                     <h3><Link to={`/products/${product._id}`}>{product.name}</Link></h3>
                     <p>{product.description?.substring(0, 80)}...</p>
                     <div className="product-footer">
-                      <span className="product-price">{product.price}EGP</span>
+                      <span className="product-price">{product.price}&nbsp;EGP</span>
                       <button
                         className="btn btn-accent btn-sm"
                         onClick={() => handleAddToCart(product)}

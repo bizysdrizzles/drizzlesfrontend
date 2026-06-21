@@ -59,7 +59,7 @@ export default function ProductDetail() {
             <span className="section-eyebrow">Premium Coffee Sauce</span>
             <h1>{product.name}</h1>
 
-            <div className="detail-price">${product.price?.toFixed(2)}</div>
+            <div className="detail-price">{product.price} &nbsp;EGP</div>
 
             <p className="detail-description">{product.description}</p>
 
@@ -89,7 +89,7 @@ export default function ProductDetail() {
                   className="btn btn-accent btn-lg add-to-cart-btn"
                   onClick={handleAdd}
                 >
-                  Add to Cart — ${(product.price * quantity).toFixed(2)}
+                  Add to Cart —{(product.price * quantity)} &nbsp;EGP
                 </button>
               </div>
             )}

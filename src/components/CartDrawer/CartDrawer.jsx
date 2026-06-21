@@ -64,7 +64,7 @@ export default function CartDrawer() {
                     </div>
                     <div className="item-info">
                       <h5>{getProductName(item)}</h5>
-                      <span className="item-price">${getProductPrice(item).toFixed(2)}</span>
+                      <span className="item-price">{getProductPrice(item)}&nbsp;EGP</span>
                     </div>
                     <div className="item-actions">
                       <div className="qty-control">
@@ -72,7 +72,7 @@ export default function CartDrawer() {
                         <span className="qty-value">{item.quantity}</span>
                         <button className="qty-btn" onClick={() => handleUpdate(pid, item.quantity + 1)}>+</button>
                       </div>
-                      <span className="item-total">${(getProductPrice(item) * item.quantity).toFixed(2)}</span>
+                      <span className="item-total">{(getProductPrice(item) * item.quantity)}&nbsp;EGP</span>
                       <button className="remove-btn" onClick={() => dispatch(removeFromCart(pid))}>🗑</button>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ export default function CartDrawer() {
               )}
               <div className="subtotal">
                 <span>Subtotal</span>
-                <strong>${subtotal.toFixed(2)}</strong>
+                <strong>{subtotal}&nbsp;EGP</strong>
               </div>
               <p className="shipping-note">Shipping calculated at checkout</p>
               <Link

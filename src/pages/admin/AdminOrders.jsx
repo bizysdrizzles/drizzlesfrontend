@@ -93,7 +93,7 @@ export default function AdminOrders() {
                       </div>
                     </td>
                     <td>{order.orderItems?.length} items</td>
-                    <td><strong>${order.total?.toFixed(2)}</strong></td>
+                    <td><strong>{order.total}&nbsp;EGP</strong></td>
                     <td><span className={`badge badge-${statusColors[order.status] || 'primary'}`}>{order.status}</span></td>
                     <td>
                       <select

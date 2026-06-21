@@ -138,10 +138,10 @@ export default function OrderDetail() {
                 </div>
                 <div className="odi-info">
                   <strong>{item.name}</strong>
-                  <span className="text-muted text-sm">Unit price: ${item.price?.toFixed(2)}</span>
+                  <span className="text-muted text-sm">Unit price: {item.price}&nbsp;EGP</span>
                 </div>
                 <div className="odi-qty">× {item.quantity}</div>
-                <div className="odi-total">${(item.price * item.quantity).toFixed(2)}</div>
+                <div className="odi-total">{(item.price * item.quantity)}&nbsp;EGP</div>
               </div>
             ))}
           </div>
@@ -161,17 +161,17 @@ export default function OrderDetail() {
               <div className="payment-rows">
                 <div className="payment-row">
                   <span>Subtotal</span>
-                  <span>${order.subtotal?.toFixed(2)}</span>
+                  <span>{order.subtotal}&nbsp;EGP</span>
                 </div>
                 {order.discount > 0 && (
                   <div className="payment-row discount">
                     <span>Discount {order.promoCodeUsed ? `(${order.promoCodeUsed.code})` : '(8th Sauce Reward)'}</span>
-                    <span>−${order.discount?.toFixed(2)}</span>
+                    <span>−{order.discount}&nbsp;EGP</span>
                   </div>
                 )}
                 <div className="payment-row total">
                   <strong>Total</strong>
-                  <strong>${order.total?.toFixed(2)}</strong>
+                  <strong>{order.total}&nbsp;EGP</strong>
                 </div>
               </div>
             </div>

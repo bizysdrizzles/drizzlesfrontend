@@ -78,7 +78,7 @@ export default function Orders() {
                 <div className="order-footer">
                   <div className="order-total">
                     <span>Total</span>
-                    <strong>${order.total?.toFixed(2)}</strong>
+                    <strong>{order.total}&nbsp;EGP</strong>
                   </div>
                   <Link to={`/orders/${order._id}`} className="btn btn-outline btn-sm">
                     View Details

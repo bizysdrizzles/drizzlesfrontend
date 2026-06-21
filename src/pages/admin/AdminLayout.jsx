@@ -23,7 +23,6 @@ export default function AdminLayout() {
 
   return (
     <div className="admin-wrapper">
-      {/* Mobile top bar */}
       <div className="admin-mobile-bar">
         <button className="sidebar-toggle" onClick={() => setSidebarOpen(true)}>
           ☰
@@ -31,7 +30,6 @@ export default function AdminLayout() {
         <span className="mobile-bar-title">Bizy's Admin</span>
       </div>
 
-      {/* Overlay when sidebar open on mobile */}
       {sidebarOpen && (
         <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
       )}

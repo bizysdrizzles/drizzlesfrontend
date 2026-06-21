@@ -187,7 +187,7 @@ export default function OrderEdit() {
 
                 <div className="edit-item-info">
                   <strong>{item.name}</strong>
-                  <span className="text-muted text-sm">${Number(item.price).toFixed(2)} each</span>
+                  <span className="text-muted text-sm">{Number(item.price)}&nbsp;EGP each</span>
                 </div>
 
                 <div className="qty-control">
@@ -197,7 +197,7 @@ export default function OrderEdit() {
                 </div>
 
                 <div className="edit-item-total">
-                  ${(Number(item.price) * item.quantity).toFixed(2)}
+                  {(Number(item.price) * item.quantity)}&nbsp;EGP
                 </div>
 
                 <button className="remove-item-btn" onClick={() => removeItem(index)} title="Remove item">✕</button>
@@ -215,7 +215,7 @@ export default function OrderEdit() {
               </div>
               <div className="summary-row">
                 <span>New Subtotal</span>
-                <strong>${newSubtotal.toFixed(2)}</strong>
+                <strong>{newSubtotal}&nbsp;EGP</strong>
               </div>
             </div>
 

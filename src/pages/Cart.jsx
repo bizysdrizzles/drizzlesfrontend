@@ -68,7 +68,7 @@ export default function Cart() {
                   </div>
                   <div className="cart-item-name">
                     <h4>{getName(item)}</h4>
-                    <span className="text-muted text-sm">${getPrice(item).toFixed(2)} each</span>
+                    <span className="text-muted text-sm">{getPrice(item)}&nbsp;EGP each</span>
                   </div>
                   <div className="qty-control">
                     <button className="qty-btn" onClick={() => handleUpdate(pid, item.quantity - 1)}>−</button>
@@ -76,7 +76,7 @@ export default function Cart() {
                     <button className="qty-btn" onClick={() => handleUpdate(pid, item.quantity + 1)}>+</button>
                   </div>
                   <div className="cart-item-total">
-                    ${(getPrice(item) * item.quantity).toFixed(2)}
+                    {(getPrice(item) * item.quantity)}&nbsp;EGP
                   </div>
                   <button className="remove-item-btn" onClick={() => dispatch(removeFromCart(pid))}>✕</button>
                 </div>
@@ -100,7 +100,7 @@ export default function Cart() {
             <div className="summary-rows">
               <div className="summary-row">
                 <span>Subtotal ({items.reduce((s, i) => s + i.quantity, 0)} items)</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>{subtotal}&nbsp;EGP</span>
               </div>
               <div className="summary-row">
                 <span>Shipping</span>
@@ -108,7 +108,7 @@ export default function Cart() {
               </div>
               {subtotal < 50 && (
                 <div className="free-shipping-note">
-                  Add ${(50 - subtotal).toFixed(2)} more for free shipping!
+                  Add {(50 - subtotal)} &nbsp;EGP more for free shipping!
                 </div>
               )}
             </div>
@@ -117,7 +117,7 @@ export default function Cart() {
 
             <div className="summary-total">
               <span>Total</span>
-              <strong>${(subtotal + (subtotal >= 50 ? 0 : 5.99)).toFixed(2)}</strong>
+              <strong>{(subtotal + (subtotal >= 50 ? 0 : 5.99))} &nbsp;EGP</strong>
             </div>
 
             <Link to="/checkout" className="btn btn-accent btn-lg checkout-btn">

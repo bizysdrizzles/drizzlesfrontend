@@ -62,7 +62,7 @@ export default function AdminAnalytics() {
         <div className="card analytic-stat">
           <div className="as-icon">💰</div>
           <div>
-            <strong>${(sales?.totalRevenue || 0).toFixed(2)}</strong>
+            <strong>{(sales?.totalRevenue || 0)}&nbsp;EGP</strong>
             <span>Total Revenue</span>
           </div>
         </div>
