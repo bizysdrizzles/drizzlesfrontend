@@ -178,6 +178,20 @@
 }
 
 @media (max-width: 640px) {
+
+  .product-body h3 {
+    font-size: 0.82rem;
+    margin-bottom: 6px;
+  }
+
+  .product-body p {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
+    flex: 1;
+  }
+
   .product-meta {
     flex-wrap: wrap;
     gap: var(--spacing-xs);
