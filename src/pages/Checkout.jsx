@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCartItems, selectCartSubtotal, resetCart } from '../features/cart/cartSlice';
+import { selectCartItems, selectCartSubtotal, clearCart } from '../features/cart/cartSlice';
 import { createOrder } from '../features/orders/ordersSlice';
 import { selectUser, selectIsAuthenticated, getMe } from '../features/auth/authSlice';
 import { validatePromoCode, selectValidatedPromo, selectPromoLoading, clearValidated } from '../features/promocodes/promoSlice';
@@ -133,11 +133,11 @@ export default function Checkout() {
     if (result.meta.requestStatus === 'fulfilled') {
       dispatch(showToast('Order placed successfully! 🎉', 'success'));
       if (isAuth) {
-        dispatch(resetCart());
+        dispatch(clearCart());
         navigate(`/orders/${result.payload._id}`);
       } else {
         setGuestOrderId(result.payload._id);
-        setTimeout(() => dispatch(resetCart()), 100);
+        setTimeout(() => dispatch(clearCart()), 100);
       }
     } else {
       dispatch(showToast(result.payload || 'Order failed', 'error'));
@@ -171,12 +171,12 @@ export default function Checkout() {
               gap: 12,
             }}>
               <span style={{ fontFamily: 'monospace', fontSize: '1rem', fontWeight: 700, wordBreak: 'break-all' }}>
-                {guestOrderId.slice(-6).toUpperCase()}
+                {guestOrderId.slice(-8).toUpperCase()}
               </span>
               <button
                 className="btn btn-accent btn-sm"
                 onClick={() => {
-                  navigator.clipboard.writeText(guestOrderId.slice(-6).toUpperCase());
+                  navigator.clipboard.writeText(guestOrderId.slice(-8).toUpperCase());
                   dispatch(showToast('Order ID copied!', 'success'));
                 }}
               >
