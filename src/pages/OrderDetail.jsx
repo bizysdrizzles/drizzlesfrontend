@@ -169,6 +169,10 @@ export default function OrderDetail() {
                     <span>−{order.discount}&nbsp;EGP</span>
                   </div>
                 )}
+                <div className="summary-line">
+                  <span>Shipping</span>
+                  <span>{order.shippingFee || 100} EGP</span>
+                </div>
                 <div className="payment-row total">
                   <strong>Total</strong>
                   <strong>{order.total}&nbsp;EGP</strong>
