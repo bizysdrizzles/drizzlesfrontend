@@ -171,12 +171,12 @@ export default function Checkout() {
               gap: 12,
             }}>
               <span style={{ fontFamily: 'monospace', fontSize: '1rem', fontWeight: 700, wordBreak: 'break-all' }}>
-                {guestOrderId}
+                {guestOrderId.slice(-6).toUpperCase()}
               </span>
               <button
                 className="btn btn-accent btn-sm"
                 onClick={() => {
-                  navigator.clipboard.writeText(guestOrderId);
+                  navigator.clipboard.writeText(guestOrderId.slice(-6).toUpperCase());
                   dispatch(showToast('Order ID copied!', 'success'));
                 }}
               >
