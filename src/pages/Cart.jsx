@@ -104,20 +104,15 @@ export default function Cart() {
               </div>
               <div className="summary-row">
                 <span>Shipping</span>
-                <span className="text-accent">{subtotal >= 50 ? 'FREE' : '$5.99'}</span>
+                <span className="text-accent">{subtotal >= 50000 ? 'FREE' : '100 EGP'}</span>
               </div>
-              {subtotal < 50 && (
-                <div className="free-shipping-note">
-                  Add {(50 - subtotal)} &nbsp;EGP more for free shipping!
-                </div>
-              )}
             </div>
 
             <div className="divider" />
 
             <div className="summary-total">
               <span>Total</span>
-              <strong>{(subtotal + (subtotal >= 50 ? 0 : 5.99))} &nbsp;EGP</strong>
+              <strong>{(subtotal + (subtotal >= 50000 ? 0 : 100))} &nbsp;EGP</strong>
             </div>
 
             <Link to="/checkout" className="btn btn-accent btn-lg checkout-btn">
