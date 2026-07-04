@@ -554,6 +554,7 @@ tr:hover td {
   width: 44px;
   height: 36px;
   text-align: center;
+  align-content: center;
   background: transparent;
   border: none;
   border-left: 1px solid var(--border-color);
