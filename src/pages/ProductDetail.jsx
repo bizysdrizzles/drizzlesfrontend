@@ -72,7 +72,7 @@ export default function ProductDetail() {
               {product.stock > 10 && <span className="badge badge-success">✓ In Stock</span>}
             </div>
 
-            {product.stock > 0 && (
+            {(product.stock > 0 || product.inStock) && (
               <div className="detail-add">
                 <div className="qty-section">
                   <label>Quantity</label>
@@ -81,7 +81,7 @@ export default function ProductDetail() {
                     <span className="qty-value">{quantity}</span>
                     <button
                       className="qty-btn"
-                      onClick={() => setQuantity(q => Math.min(product.stock, q + 1))}
+                      onClick={() => setQuantity(q => Math.min(product.stock || 999, q + 1))}
                     >+</button>
                   </div>
                 </div>

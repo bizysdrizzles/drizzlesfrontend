@@ -21,7 +21,7 @@ export default function AdminProducts() {
   useEffect(() => { dispatch(fetchProductsAdmin()); }, [dispatch]);
 
   const openCreate = () => { setEditProduct(null); setForm(EMPTY); setModal(true); };
-  const openEdit = (p) => { setEditProduct(p); setForm({ name: p.name || '', description: p.description || '', price: p.price || '', stock: p.stock || '', imageUrl: p.imageUrl || '', type: p.type || 'sauce' }); setModal(true); };
+  const openEdit = (p) => { setEditProduct(p); setForm({ name: p.name || '', description: p.description || '', price: p.price || '', stock: p.stock !== undefined ? p.stock : '', imageUrl: p.imageUrl || '', type: p.type || 'sauce' }); setModal(true); };
 
   const handleSave = async (e) => {
     e.preventDefault();

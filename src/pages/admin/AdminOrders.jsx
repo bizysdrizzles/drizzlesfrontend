@@ -86,9 +86,9 @@ export default function AdminOrders() {
                     <td>
                       <div style={{ fontSize: '0.85rem' }}>
                         {order.user ? (
-                          <span>{order.user?.fullName || 'Registered User'}</span>
+                          <span>{order.user?.fullName || 'Registered User'}<br />{order.user.email} <br />{order.user.phoneNumber} </span>
                         ) : (
-                          <span className="text-muted">Guest<br />{order.guestEmail}</span>
+                          <span className="text-muted">Guest<br />{order.guestEmail} <br />{order.guestPhone}</span>
                         )}
                       </div>
                     </td>
