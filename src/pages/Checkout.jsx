@@ -49,7 +49,7 @@ export default function Checkout() {
   const promoDiscount = validatedPromo ? (validatedPromo.discountPercent || 0) / 100 : 0;
   const promoDiscountAmount = safeSubtotal * promoDiscount;
   const discountAmount = loyaltyDiscountAmount + promoDiscountAmount;
-  const shipping = 100;
+  const shipping = 120;
   const total = safeSubtotal - discountAmount + shipping;
 
   const [promoCode, setPromoCode] = useState('');
